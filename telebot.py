@@ -3,9 +3,9 @@ import requests
 from telegram import InlineKeyboardButton, InlineKeyboardMarkup, Update
 from telegram.ext import Application, CommandHandler, CallbackQueryHandler, ContextTypes, MessageHandler, filters
 
-# Environment variables ile token ve API key
-TOKEN = os.environ.get("TOKEN")
-API_KEY = os.environ.get("API_KEY")
+# Environment variables
+TOKEN = os.environ["TOKEN"]       # Railway’de ekle
+API_KEY = os.environ["API_KEY"]   # Railway’de ekle
 
 # /start komutu
 async def start(update: Update, context: ContextTypes.DEFAULT_TYPE):
@@ -53,4 +53,6 @@ app.add_handler(CallbackQueryHandler(button))
 app.add_handler(MessageHandler(filters.TEXT & ~filters.COMMAND, handle_message))
 
 # Botu başlat
-app.run_polling()
+if __name__ == "__main__":
+    print("Bot başlatılıyor...")
+    app.run_polling()
