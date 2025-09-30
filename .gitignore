@@ -1,0 +1,17 @@
+# Python cache dosyaları
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Local gizli dosyalar
+.env
+token.txt
+API_KEY.txt
+
+# IDE / editor dosyaları
+.vscode/
+.idea/
+
+# Log dosyaları
+*.log
